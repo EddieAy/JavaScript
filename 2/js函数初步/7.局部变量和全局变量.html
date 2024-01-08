@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7.局部变量和全局变量</title>
+</head>
+<body>
+    <script>
+        function myfunc(name){
+            var name = "qwer"
+            alert("name = " + name)
+        }
+
+        var name = "jack"
+        myfunc(name)
+
+        alert("name = "+name)
+
+        function myfunc2(){
+            name2 = "merry"
+        }
+
+        myfunc2()
+        alert("name2 = "+name2)
+
+    </script>
+</body>
+</html>

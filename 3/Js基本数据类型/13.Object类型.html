@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object类型</title>
+</head>
+<body>
+    <script>
+
+        function myfunc(name){
+            alert("this is my name : " + name)
+        }
+
+        myfunc("qwe") //这是调用函数
+
+        var myfuncvar = new myfunc("jack")
+        alert(typeof myfuncvar)
+
+        function User(ename,sal){
+            this.ename = ename
+            this.sal = sal
+        }
+
+        var Smith = new User("smith",800)
+        alert(Smith.ename + Smith.sal)
+    </script>
+</body>
+</html>

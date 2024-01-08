@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js基本数据类型</title>
+</head>
+<body>
+    <script>
+        function sum(a,b){
+            if(typeof a == "number" && typeof b == "number"){
+                return a + b
+            }
+            alert(a + " and " + b + " must be number")
+        }
+
+        alert("this is my sum a + b = " + sum(6,4))
+        alert("test wrong parameter " + sum("qwe",123))
+
+        var i
+        alert(typeof i)
+
+        var i1 = 10.3123
+        alert(typeof i1)
+
+        var i2 = "qwe"
+        alert(typeof i2)
+
+        var i3 = null
+        alert(typeof i3)    //object
+
+        var i4 = false
+        alert(typeof i4)
+
+        alert(typeof sum)
+    </script>
+</body>
+</html>

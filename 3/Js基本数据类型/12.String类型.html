@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String类型</title>
+</head>
+<body>
+    <script>
+        //单双引号都行
+        var a = "qwe"
+        alert(typeof a)     //string
+        var b = new String("qwer")
+        alert(typeof b)     //object
+
+        //indexOf
+        alert("https://www.google.com".indexOf("https") >=0 ? "使用了https":"没使用https")
+        //charAt
+        alert(a.length + " " + b.length + " " + a.charAt(1) +" "+ a.indexOf("we"))
+
+
+        //replace
+        alert(a.replace("q","!"))   //replace 只替换第一个  想都替换 需要 Regular Expression 正则表达式
+
+        //重点 substr substring 之间有什么区别
+        var c = "HelloWorld"
+        alert(c.substring(1,4)) //ell
+        alert(c.substr(1,4)) //ello  都尼玛deprecated了 还有人问吗
+
+    </script>
+</body>
+</html>
