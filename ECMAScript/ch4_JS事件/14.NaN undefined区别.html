@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三种数据区别</title>
+</head>
+<body>
+    <script>
+        alert(typeof null)
+        //类型        number string null boolean undefined  object
+        //typeof 对应 number string object boolean undefined
+        alert(typeof NaN)
+        alert(typeof undefined)
+
+        alert(null == undefined) //T
+        alert(null == NaN)  //F
+        alert(undefined == NaN)     //F
+
+        alert(null === undefined) //三个等号  需要值相同 且类型相同
+        //alert(1 == true) true
+        //alert(1 === true) false
+    </script>
+</body>
+</html>

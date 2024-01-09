@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获得文本框的value</title>
+</head>
+<body>
+    <script>
+        window.onload = function (){
+          document.getElementById("3").onclick = function (){
+
+            document.getElementById("2").value = document.getElementById("1").value
+            document.getElementById("1").value = ""
+          }
+        }
+    </script>
+
+    <input type="text" value="我很帅" id="1">
+    <input type="text" id="2">
+    <input type="button" value="点我一下，转移 我很帅" id="3">
+
+</body>
+</html>

@@ -19,10 +19,19 @@
         function User(ename,sal){
             this.ename = ename
             this.sal = sal
+            this.getSal = function (){
+                return this.sal
+            }
         }
 
         var Smith = new User("smith",800)
-        alert(Smith.ename + Smith.sal)
+        alert(Smith.ename + Smith.getSal())
+
+        User.prototype.getEname = function (){
+            return this.ename
+        }
+
+        alert(Smith.getEname() + Smith.getSal())
     </script>
 </body>
 </html>

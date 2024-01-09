@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制语句</title>
+</head>
+<body>
+    <script>
+
+
+      // for ... in
+      var b = [1,2,"qwe"]
+
+      for (var i = 0; i < b.length; i++) {
+        alert(b[i])
+      }
+
+      for(var i in b){
+        alert(b[i]) //尼玛 返回的竟然是下标
+      }
+
+      User = function (username,password){
+        this.name = username
+        this.password = password
+      }
+
+      var u = new User("jack","qwe")
+      alert(u.name+u["password"])
+
+      for (var field in u){
+        alert(field + typeof field)
+        alert(u[field])
+      }
+
+
+      //with
+      with (u){
+        alert(name + "," + password)
+      }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>执行顺序</title>
+</head>
+<body>
+
+    <script >
+
+/*        window.onload = ready;
+        function ready(){
+            document.getElementById("1").onclick = function (){
+                alert("Test执行顺序")
+            }
+        }*/
+
+        window.onload = function (){
+            document.getElementById("1").onclick = function (){
+                alert("Test执行顺序")
+            }
+        }
+
+    </script>
+
+    <input type="button" value="id" id="1">
+</body>
+</html>

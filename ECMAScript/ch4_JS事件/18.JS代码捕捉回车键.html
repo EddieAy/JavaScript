@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS代码捕捉回车键</title>
+</head>
+<body>
+    <script>
+        window.onload = function (){
+            var myObj = document.getElementById("1")
+            myObj.onkeydown = function (event){
+                // alert(111)
+                // alert(event)
+                if (event.keyCode === 13){
+                    alert("正在进行验证")
+                }
+
+            }
+        }
+    </script>
+
+    <input type="text" id="1">
+</body>
+</html>

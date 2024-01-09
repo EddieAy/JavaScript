@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS代码设置节点的属性</title>
+</head>
+<body>
+    <img src="img_3.png" alt="404" align="center">
+    <p>主要是想讲，节点属性 有的 都可以 使用'.'</p>
+
+
+    <script>
+        window.onload = function (){
+            document.getElementById("1").onclick = function (){
+                document.getElementById("2").type = "checkbox"
+            }
+        }
+    </script>
+
+    <input type="text" id="2">
+    <input type="button" value="把文本框改为复选框" id="1">
+</body>
+</html>
