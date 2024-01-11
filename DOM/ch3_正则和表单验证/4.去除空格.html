@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+
+        String.prototype.trim = function (){
+            return this.replace(/^\s*/,"").replace(/\s*$/,"")+"-ze"
+        }
+        window.onload = function (){
+            document.getElementById("btn").onclick = function (){
+                var username = document.getElementById("text").value
+                username = username.trim()
+                alert("--->" + username + "<---")
+            }
+        }
+    </script>
+
+    <input type="text" id="text" >
+    <input type="button" value="获得去除空格后的用户名" id="btn">
+</body>
+</html>

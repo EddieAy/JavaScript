@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+</head>
+<body>
+
+    <script>
+        window.onload = function (){
+            document.getElementById("loginButton").onclick = function () {
+                var username = document.getElementById("username").value
+                var usernameRE = /^[a-zA-Z0-9]{6,14}$/
+                if (username == ""){
+                    document.getElementById("infoError").innerText = "用户名不能为空"
+                }
+                if(!usernameRE.test(username)){
+                    document.getElementById("infoError").innerText = "用户名需为6-14位，只能由数字或者字母构成"
+                }
+
+                var ps = document.getElementById("password").value
+                var ps2 = document.getElementById("password2").value
+                if(ps != ps2){
+                    document.getElementById("infoError").innerText = "两次密码不一致"
+                }
+
+
+            }
+            document.getElementById("username").onfocus = function (){
+                document.getElementById("infoError").innerText = ""
+            }
+            document.getElementById("password").onfocus = function (){
+                document.getElementById("infoError").innerText = ""
+            }
+            document.getElementById("password2").onfocus = function (){
+                document.getElementById("infoError").innerText = ""
+            }
+        }
+    </script>
+
+    <label for="username">用户名:</label>
+    <input type="text" id="username" placeholder="输入用户名">
+<!--    <button id="loginButton">登录</button>-->
+    <br>
+    <label for="password">密码:</label>
+    <input type="text" id="password" placeholder="输入密码">
+    <br>
+    <label for="password2">验证密码:</label>
+    <input type="text" id="password2" placeholder="再次输入密码">
+
+    <br>
+    <button id="loginButton" >注册</button>
+    <span id="infoError" style="color: red; font-size: 15px"></span>
+</body>
+</html>
