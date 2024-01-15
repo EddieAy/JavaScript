@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页时钟</title>
+</head>
+<body>
+    <script>
+        var nowTime = new Date()
+        nowTime= nowTime.toLocaleString()
+        document.write(nowTime)
+
+        document.write("<br>")
+
+        document.write(new Date().getTime())
+    </script>
+    <script>
+        function displayTime(){
+            var time = new Date()
+            document.getElementById("timeDiv").innerHTML = time.toLocaleString()
+        }
+
+        function start(){
+            v = window.setInterval(displayTime,1000)
+        }
+
+        function stop(){
+            window.clearInterval(v)
+            document.getElementById("timeDiv").innerHTML = ""
+        }
+    </script>
+
+    <br>
+    <input type="button" id="time" value="显示系统时间" onclick="start()">
+    <input type="button" id="timeCancel" value="取消展示系统时间" onclick="stop()">
+
+    <div id="timeDiv"></div>
+</body>
+</html>

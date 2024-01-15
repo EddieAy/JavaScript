@@ -1,0 +1,33 @@
+{
+  "total": 3,
+  "students": [
+    {
+      "name": "张三",
+      "age": 21,
+      "gender": "男",
+      "studentID": "11451",
+      "address": "云南大理"
+    },
+    {
+      "name": "李明",
+      "age": 20,
+      "gender": "男",
+      "studentId": "S1001",
+      "address": "北京市海淀区"
+    },
+    {
+      "name": "张丽",
+      "age": 19,
+      "gender": "女",
+      "studentId": "S1002",
+      "address": "上海市浦东新区"
+    },
+    {
+      "name": "王强",
+      "age": 21,
+      "gender": "男",
+      "studentId": "S1003",
+      "address": "广州市天河区"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>如题</title>
+</head>
+<body>
+
+    <script>
+        window.onload = function (){
+            var firstCheckbox = document.getElementById("all")
+            firstCheckbox.onclick = function (){
+                var boxes = document.getElementsByName("lol")
+                for (var i = 0; i < boxes.length; i++) {
+                    boxes[i].checked = firstCheckbox.checked
+                }
+            }
+
+            var boxes = document.getElementsByName("lol")
+            var allLength = boxes.length;
+
+            for (let i = 0; i < allLength; i++) {
+                boxes[i].onclick = function (){
+                    var checkedSum = 0
+                    for (let j = 0; j < allLength; j++) {
+                        if(boxes[j].checked){
+                            checkedSum+=1
+                        }
+                    }
+                    firstCheckbox.checked = (checkedSum == allLength)
+                }
+            }
+        }
+    </script>
+
+    <input type="checkbox" id="all">全选<br>
+    <input type="checkbox" name="lol" value="q">q<br>
+    <input type="checkbox" name="lol" value="w">w<br>
+    <input type="checkbox" name="lol" value="e">e<br>
+    <input type="checkbox" name="lol" value="r">r<br>
+<!--    <label for="option4">选项 4</label><br>-->
+
+
+
+</body>
+</html>

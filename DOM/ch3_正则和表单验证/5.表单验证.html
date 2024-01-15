@@ -3,53 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <title>表单验证</title>
+    <style>
+        span{
+            color: red;
+            font-size:15px;
+        }
+    </style>
 </head>
 <body>
 
     <script>
         window.onload = function (){
-            document.getElementById("loginButton").onclick = function () {
+
+            var usernameValid = false;
+            var passwordsValid = false;
+            //失去焦点 就开始判断
+            document.getElementById("username").onblur = function (){
+
                 var username = document.getElementById("username").value
                 var usernameRE = /^[a-zA-Z0-9]{6,14}$/
-                if (username == ""){
-                    document.getElementById("infoError").innerText = "用户名不能为空"
-                }
-                if(!usernameRE.test(username)){
-                    document.getElementById("infoError").innerText = "用户名需为6-14位，只能由数字或者字母构成"
+
+                username = username.trim()
+
+                if (username === ""){
+                    document.getElementById("userNameError").innerText = "用户名不能为空"
+                }else if(!usernameRE.test(username)){
+                    document.getElementById("userNameError").innerText = "用户名需为6-14位，只能由数字或者字母构成"
+                }else {
+                    usernameValid = true
                 }
 
-                var ps = document.getElementById("password").value
-                var ps2 = document.getElementById("password2").value
-                if(ps != ps2){
-                    document.getElementById("infoError").innerText = "两次密码不一致"
-                }
 
 
             }
+
+            //回到焦点 错误的 才清空
             document.getElementById("username").onfocus = function (){
-                document.getElementById("infoError").innerText = ""
+                userNameErrorInfo = document.getElementById("userNameError").innerText
+                if (userNameErrorInfo != ""){
+                    // document.getElementById("username").value = ""
+                    document.getElementById("userNameError").innerText = ""
+                }else {
+                    passwordsValid = true
+                }
             }
-            document.getElementById("password").onfocus = function (){
-                document.getElementById("infoError").innerText = ""
+
+            document.getElementById("password2").onblur = function (){
+                var pwd1 = document.getElementById("password").value
+                var pwd2 = document.getElementById("password2").value
+                if (pwd1 != pwd2){
+                    document.getElementById("passwordConfirmError").innerText = "两次密码不一致"
+                }
             }
+
             document.getElementById("password2").onfocus = function (){
-                document.getElementById("infoError").innerText = ""
+                var info = document.getElementById("passwordConfirmError").innerText
+                if (info != ""){
+                    // document.getElementById("password2").value = ""
+                    document.getElementById("passwordConfirmError").innerText = ""
+                }
             }
+
+
+            document.getElementById("loginButton").onclick = function () {
+                var userForm = document.getElementById("userForm")
+                if (usernameValid && passwordsValid){
+                    userForm.submit()
+                }
+            }
+
         }
     </script>
 
-    <label for="username">用户名:</label>
-    <input type="text" id="username" placeholder="输入用户名">
-<!--    <button id="loginButton">登录</button>-->
-    <br>
-    <label for="password">密码:</label>
-    <input type="text" id="password" placeholder="输入密码">
-    <br>
-    <label for="password2">验证密码:</label>
-    <input type="text" id="password2" placeholder="再次输入密码">
+    <form action="https://localhost:8080/jd/save" method="get" id="userForm">
+        <label for="username">用户名:</label>
+        <input type="text" id="username" placeholder="输入用户名">
+        <span id="userNameError"></span>
+        <!--    <button id="loginButton">登录</button>-->
+        <br>
+        <label for="password">密码:</label>
+        <input type="text" id="password" placeholder="输入密码">
+        <br>
+        <label for="password2">验证密码:</label>
+        <input type="text" id="password2" placeholder="再次输入密码">
+        <span id="passwordConfirmError"></span>
 
-    <br>
-    <button id="loginButton" >注册</button>
+        <br>
+        <button id="loginButton" >注册</button>
+    </form>
+
     <span id="infoError" style="color: red; font-size: 15px"></span>
 </body>
 </html>

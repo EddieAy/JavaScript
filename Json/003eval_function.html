@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eval函数</title>
+</head>
+<body>
+    <script>
+        window.eval("var i = 260")
+        document.write("i = ",i,"<br>")
+
+
+        var fromJava = "{\"year\":\"2024\",\"month\":\"1\"}"
+        window.eval("var jsObj = " + fromJava)
+        document.write(jsObj.year + jsObj.month)
+    </script>
+
+
+</body>
+</html>
